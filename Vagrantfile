@@ -10,7 +10,7 @@ Vagrant.configure("2") do |config|
     ansible.vm.network "private_network", ip: "173.42.42.100"
     ansible.vm.provision :shell, path: "entrypoint_scripts/install_ansible.sh", run: 'always'
     ansible.vm.provider "virtualbox" do |v|
-      v.name = "ansible-server"
+      v.name = "ansible-master"
       v.memory = 1024
       v.cpus = 1
       v.customize ["modifyvm", :id, "--audio", "none"]
